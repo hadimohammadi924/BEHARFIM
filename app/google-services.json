@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533511392118",
+    "project_id": "beharfim-1cfaa",
+    "storage_bucket": "beharfim-1cfaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533511392118:android:2ae8b79fd5d70418b5c857",
+        "android_client_info": {
+          "package_name": "ir.hadimohammadi.beharfim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533511392118-mrdugursdljn6kna2p91tjlm9ktj25cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt-TGO0DqyQ9lCB1zJ45c3ZmYr_0DoFeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533511392118-mrdugursdljn6kna2p91tjlm9ktj25cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

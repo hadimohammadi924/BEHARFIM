@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group>
+
+        <item android:id="@+id/item_home"
+            android:title="رفتن به سایت ادمین"
+            android:icon="@drawable/logo"
+
+
+            />
+        <item android:id="@+id/item_update"
+            android:title=" بروزرسانی نرم افزار"
+            android:icon="@drawable/logo"
+            />
+        <item android:id="@+id/item_fav"
+            android:title="مشاهده محصولات اشانتیون دار"
+            android:icon="@drawable/logo"
+           />
+
+
+    </group>
+    <group android:id="@+id/group_menu">
+
+        <item android:id="@+id/item_setting"
+            android:title="تنظیمات"
+           />
+        <item android:id="@+id/item_serach"
+            android:title="جستجو"
+          />
+    </group>
+
+
+    <item android:title="پشتیبانی">
+
+        <menu>
+
+            <item android:id="@+id/item_help"
+                android:title="راهنما"
+              />
+            <item android:id="@+id/item_about"
+                android:title="درباره ما"
+             />
+            <item android:id="@+id/item_exit"
+                android:title="خروج"
+               />
+
+        </menu>
+
+
+    </item>
+
+</menu>

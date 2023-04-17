@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".Chatroom">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/layoutActionBar"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/groupName"
+            android:text="اسم نمونه گروه"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutMessage"
+        android:layout_below="@+id/layoutActionBar"
+        android:clipToPadding="false"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:stackFromEnd="true"
+        app:reverseLayout="true" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/layoutActionBar"
+        android:background="#eeffffff"
+        android:visibility="gone"
+        android:id="@+id/uploadBar"
+        android:layout_height="?attr/actionBarSize">
+
+
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/doc"
+            android:padding="8dp"
+            android:id="@+id/uploadFileImage"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_height="42dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:maxLength="50"
+            android:textSize="11sp"
+            android:id="@+id/uploadFileText"
+            android:layout_toLeftOf="@+id/uploadFileImage"
+            android:text="ّتست نام فایل در حال آپلود"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/animation_view"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:maxLength="50"
+                android:textSize="11sp"
+                android:text="50%"
+                android:id="@+id/percentText"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:maxLength="50"
+                android:textSize="11sp"
+                android:text="در حال بارگذاری"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="42dp"
+            android:layout_centerVertical="true"
+            android:layout_height="42dp"
+            android:layout_marginLeft="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/upload" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/layoutMessage"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:textColorHint="#eee"
+            android:padding="10dp"
+            android:id="@+id/text"
+            android:layout_weight="9"
+            android:textSize="13sp"
+            android:hint="Write something ..."
+            android:background="@drawable/rounded"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_weight=".5"
+            app:tint="#fff"
+            android:padding="12dp"
+            android:onClick="OpenFileDialog"
+            android:clickable="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/file"
+            android:layout_height="?attr/actionBarSize"/>
+        <ImageView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_weight=".5"
+            app:tint="#fff"
+            android:padding="12dp"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/voice"
+            android:layout_height="?attr/actionBarSize"/>
+
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:src="@drawable/send"
+        app:tint="#fff"
+        android:id="@+id/sendFab"
+        android:layout_marginRight="5dp"
+        android:visibility="invisible"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
