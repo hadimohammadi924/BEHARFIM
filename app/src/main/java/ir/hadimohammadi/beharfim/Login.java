@@ -57,10 +57,8 @@ public class Login extends AppCompatActivity {
     private TextView countdownText;
     private CountDownTimer countDownTimer;
     private long timeLeftInMilliseconds = 60000; // 10 minutes
-LinearLayout one;
-TextView resend;
-
-
+    LinearLayout one;
+    TextView resend;
 
 
     @Override
@@ -76,18 +74,9 @@ TextView resend;
         countdownText = findViewById(R.id.countdownText);
 
 
-
-
-
-
-
-
-
-
         et4 = findViewById(R.id.et4);
         sp = getApplicationContext().getSharedPreferences("Beharfim", Context.MODE_PRIVATE);
         editor = sp.edit();
-
 
 
         et4.addTextChangedListener(new TextWatcher() {
@@ -124,7 +113,8 @@ TextView resend;
                 if (etNumber.length() == 11) {
                     submitButton.setEnabled(true);
                     submitButton.setBackgroundResource(R.color.purple_500);
-                } else { submitButton.setBackgroundResource(R.color.white);
+                } else {
+                    submitButton.setBackgroundResource(R.color.white);
                 }
             }
 
@@ -138,8 +128,8 @@ TextView resend;
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(Login.this,Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED) {
-                    requestPermission();
+                    if (ContextCompat.checkSelfPermission(Login.this, Manifest.permission.RECEIVE_SMS) != PackageManager.PERMISSION_GRANTED) {
+                        requestPermission();
 
                     /*
                     if (etNumber.length() == 11) {
@@ -148,21 +138,19 @@ TextView resend;
                     } else {Toast.makeText(Login.this, "شماره تلفن را با صفر وارد کنید", Toast.LENGTH_SHORT).show();}
                     */
 
-                }
-                else {
+                    } else {
 
-                    if (etNumber.length() == 11) {
-                        one.setVisibility(View.VISIBLE);
-                        login();
-                        startTimer();
+                        if (etNumber.length() == 11) {
+                            one.setVisibility(View.VISIBLE);
+                            login();
+                            startTimer();
+                        } else {
+                            Toast.makeText(Login.this, "شماره تلفن را با صفر وارد کنید", Toast.LENGTH_SHORT).show();
+                        }
+
+
                     }
-                    else {Toast.makeText(Login.this, "شماره تلفن را با صفر وارد کنید", Toast.LENGTH_SHORT).show();}
-
-
-
                 }
-                }
-
 
 
             }
@@ -275,7 +263,6 @@ TextView resend;
     }
 
 
-
     private void requestPermission() {
         Toast.makeText(this, "جهت ارسال خودکار کد ورود مجوز بدهید", Toast.LENGTH_SHORT).show();
         ActivityCompat.requestPermissions(Login.this,
@@ -315,9 +302,6 @@ TextView resend;
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(1);
     }
-
-
-
 
 
 }

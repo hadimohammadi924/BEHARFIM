@@ -24,6 +24,7 @@ import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     TabLayout tabLayout;
     ViewPager viewPager;
-    Button floa;
+    LottieAnimationView floa;
     Toolbar toolbar;
     LinearLayout hadi;
     NavigationView navigationView;

@@ -21,7 +21,7 @@
         android:id="@+id/toolbar"
         android:layoutDirection="rtl"
         android:textDirection="rtl"
-        android:background="#1db995"
+        android:background="#1D9FF1"
         android:layout_height="?actionBarSize">
     <include layout="@layout/toolbar" />
     </androidx.appcompat.widget.Toolbar>
@@ -31,7 +31,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1db995"
+        android:background="#1D9FF1"
         tools:ignore="MissingConstraints">
 
     </com.google.android.material.tabs.TabLayout>
@@ -43,19 +43,19 @@
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
         tools:layout_editor_absoluteX="8dp" />
-        <Button
+        <com.airbnb.lottie.LottieAnimationView
             android:layout_marginTop="-68dp"
             android:layout_marginRight="18dp"
             android:id="@+id/floa"
-            android:drawableRight="@drawable/ic_baseline_chat_24"
-            android:background="@null"
-
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/mass"
             android:layout_gravity="right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="شروع">
+            android:layout_width="55dp"
+            android:layout_height="55dp">
 
-        </Button>
+
+        </com.airbnb.lottie.LottieAnimationView>
     </LinearLayout>
 
 
