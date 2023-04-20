@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
 
                         // Get new FCM registration token
                         String token = task.getResult();
-                        addDevice(token);
+                     //   addDevice(token);
                     //    Toast.makeText(getActivity(), token, Toast.LENGTH_SHORT).show();
 
                     }
@@ -115,6 +115,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    /*
     public void addDevice(String Token) {
 
         String DeviceModel = Build.MODEL;
@@ -145,6 +146,8 @@ public class HomeFragment extends Fragment {
         requestQueue.add(stringRequest);
     }
 
+
+     */
 
     public void getChats() {
 

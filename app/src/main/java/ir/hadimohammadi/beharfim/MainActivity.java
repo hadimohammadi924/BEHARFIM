@@ -119,16 +119,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        menu_drawer_right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(Gravity.RIGHT);
 
-
-
-
-            }
-        });
 
 
 
