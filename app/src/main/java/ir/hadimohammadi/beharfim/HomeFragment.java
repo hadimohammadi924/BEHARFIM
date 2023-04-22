@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
         sp = getActivity().getSharedPreferences("Beharfim", Context.MODE_PRIVATE);
 
 
-
+/*
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
@@ -98,6 +98,8 @@ public class HomeFragment extends Fragment {
 
 
 
+ */
+
 
         if (groupsType == 0) {
             text.setText("چت های شخصی");
@@ -109,7 +111,55 @@ public class HomeFragment extends Fragment {
             text.setText("عمومی");
         }
 
-        getChats();
+
+        String Users_ID = sp.getString("Users_ID", "");
+        cache = new DiskBasedCache(getActivity().getCacheDir(), 1024 * 1024); // 1MB cap
+        Network network = new BasicNetwork(new HurlStack());
+        requestQueue = new RequestQueue(cache, network);
+        requestQueue.start();
+        String url ="https://pgtab.ir/home/getChats?Users_ID=" + Users_ID;
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            List<CardInfo> cards = new ArrayList<>();
+                            JSONObject respo = new JSONObject(response);
+                            JSONArray items = respo.getJSONArray("items");
+                            for (int i = 0; i < items.length(); i++) {
+                                JSONObject temp = items.getJSONObject(i);
+                                CardInfo ci = new CardInfo();
+                                ci.Groups_ID = temp.getString("Groups_ID");
+                                ci.Groups_Title = temp.getString("Groups_Title");
+                                ci.Groups_Username = temp.getString("Groups_Username");
+                                ci.Groups_Avatar = temp.getString("Groups_Avatar");
+                                ci.Groups_About = temp.getString("Groups_About");
+
+                                cards.add(ci);
+                            }
+
+                            CardAdapter adapter = new CardAdapter(cards,getActivity());
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                            recyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        requestQueue.add(stringRequest);
+
+
+
+
 
 
         return view;
@@ -208,5 +258,13 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+
+
+
+
+
+
+
 
 }

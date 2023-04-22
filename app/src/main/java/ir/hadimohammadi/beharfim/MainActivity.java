@@ -125,8 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() { finish(); }
+
 
 
     private void requestPermission() {
@@ -213,9 +212,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(1);
+    }
 
 }
