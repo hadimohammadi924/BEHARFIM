@@ -111,6 +111,8 @@ public class HomeFragment extends Fragment {
             text.setText("عمومی");
         }
 
+        for (int i = 0; i <10; i++) {
+
 
         String Users_ID = sp.getString("Users_ID", "");
         cache = new DiskBasedCache(getActivity().getCacheDir(), 1024 * 1024); // 1MB cap
@@ -157,12 +159,12 @@ public class HomeFragment extends Fragment {
                 });
         requestQueue.add(stringRequest);
 
-
-
-
+        }
 
 
         return view;
+
+
     }
 
     /*
