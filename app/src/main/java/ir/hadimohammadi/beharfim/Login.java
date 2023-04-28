@@ -72,7 +72,7 @@ public class Login extends AppCompatActivity {
         one = findViewById(R.id.one);
         resend = findViewById(R.id.resend);
         countdownText = findViewById(R.id.countdownText);
-
+////*****
 
         et4 = findViewById(R.id.et4);
         sp = getApplicationContext().getSharedPreferences("Beharfim", Context.MODE_PRIVATE);
